@@ -26,8 +26,12 @@
 		<pathetic>Pathetic</pathetic>
 		<pathetic>Pathetic</pathetic>
 	</fpossibleskills>
-	<ftitle>------- FUDGE Action Resolution Simulator -------</ftitle>
-	<fprompt>Enter corresponding skill number</fprompt>
+	<ftitle>
+        <fmaintitle>------- FUDGE Action Resolution Simulator -------</fmaintitle>
+    </ftitle>
+	<fprompt>
+        <skillprompt>Enter corresponding skill number</skillprompt>
+    </fprompt>
 	<ferror>
 		<skillchoice>Please input a valid selection</skillchoice>
 	</ferror>

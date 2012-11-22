@@ -6,7 +6,7 @@ from FUDGEDice import *
 import FUDGECalculate
 
 #Used variables
-loop = 1            # (int) Loop variable
+loop = 1            # (int) Loop variable. 1 = true, 0 = false
 raw_skill_level = 0 # (int) Value between 1 and 9 that's entered when selecting skill level
 skill_level = 0     # (int) Translated raw_skill_level onto a -4 to +4 spectrum; used to get total_roll
 dice_roll = 0       # (int) Value between -3 and +3 that is used to get total_roll
@@ -20,7 +20,7 @@ dice = FDice()
 printer.FSkipLine()
 
 #Welcome
-printer.FPrintItem(FUDGEPrinter.FTitle)  #Welcome Title
+printer.FPrintItem(FTitle['fmaintitle'])  #Welcome Title
 printer.FSkipLine()
 printer.FPrintList(FSkills) #Display Skill List
 
@@ -28,15 +28,14 @@ printer.FPrintList(FSkills) #Display Skill List
 printer.FSkipLine()
 loop = 1
 while loop == 1:
-	printer.FPrintItem(FPrompt)
+	printer.FPrintItem(FPrompt['skillprompt'])
 	raw_skill_level = int(raw_input('> '))           #Ask for input on skill level
 	#Checking for valid choice
 	if raw_skill_level > 0 and raw_skill_level < 10: #If between 0 and 10, continue
 		loop = 0
 	else:                                            #If not between 0 and 10, try again
 		printer.FSkipLine()
-		printer.PrintItem(FError['skillchoice'])
-		printer.FSkipLine()
+		printer.FPrintItem(FError['skillchoice'])
 		loop = 1
 		
 #Process skill level into true skill level

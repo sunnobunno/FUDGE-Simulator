@@ -28,16 +28,17 @@ def AppendXMLToDict(xmlroot, elementchoice, dict):
 			i = i + 1
 
 #Method to append a single item form an XML element to a single variable
+#Obselete
 def AppendXMLToItem(xmlroot, elementchoice, item):
 	for child in xmlroot.iter('elementchoice'):
 		item = child.text
 
-FSkills = []         #List of skills for asking skill level
-FPossibleSkills = [] #List of all possible outcomes (Skill level + dice roll)
-FTitle = ''          #Welcome title
-FPrompt = ''          #Promt for asking skill level
-FError = {}
-FResultIdentifiers = {}
+FSkills = []            #List of skills for asking skill level
+FPossibleSkills = []    #List of all possible outcomes (Skill level + dice roll)
+FTitle = {}             #Titles
+FPrompt = {}            #Promts
+FError = {}             #Errors
+FResultIdentifiers = {} #Identifiers for FPtintResult()
 
 #Class that controlls all of the printing, given a language
 class FPrinter:
@@ -54,8 +55,8 @@ class FPrinter:
 		#Apply langfile to lists and items
 		AppendXMLToList(root, 'flistingskills', FSkills)	
 		AppendXMLToList(root, 'fpossibleskills', FPossibleSkills)
-		AppendXMLToItem(root, 'ftitle', FTitle)
-		AppendXMLToItem(root, 'fprompt', FPrompt)
+		AppendXMLToDict(root, 'ftitle', FTitle)
+		AppendXMLToDict(root, 'fprompt', FPrompt)
 		AppendXMLToDict(root, 'ferror', FError)
 		AppendXMLToDict(root, 'fresultidentifiers', FResultIdentifiers)
 	
