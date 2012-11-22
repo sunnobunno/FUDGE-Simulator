@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<langfile lang="English">
+	<flistingskills>
+		<legendary>Legendary (+4)</legendary>
+		<superb>Suberb    (+3)</superb>
+		<great>Great     (+2)</great>
+		<fair>Fair      (+1)</fair>
+		<average>Average   (+0)</average>
+		<poor>Poor      (-1)</poor>
+		<mediocre>Mediocre  (-2)</mediocre>
+		<terrible>Terrible  (-3)</terrible>
+		<pathetic>Pathetic  (-4)</pathetic>
+	</flistingskills>
+	<fpossibleskills>
+		<legendary>Legendary</legendary>
+		<legendary>Legendary</legendary>
+		<legendary>Legendary</legendary>
+		<superb>Suberb</superb>
+		<great>Great</great>
+		<fair>Fair</fair>
+		<average>Average</average>
+		<poor>Poor</poor>
+		<mediocre>Mediocre</mediocre>
+		<terrible>Terrible</terrible>
+		<pathetic>Pathetic</pathetic>
+		<pathetic>Pathetic</pathetic>
+		<pathetic>Pathetic</pathetic>
+	</fpossibleskills>
+	<ftitle>------- FUDGE Action Resolution Simulator -------</ftitle>
+	<fprompt>Enter corresponding skill number</fprompt>
+	<ferror>
+		<skillchoice>Please input a valid selection</skillchoice>
+	</ferror>
+	<fresultidentifiers>
+		<skilllevel>Skill Level</skilllevel>
+		<roll>Roll</roll>
+		<totalroll>Roll + Skill Level</totalroll>
+	</fresultidentifiers>
+</langfile>

@@ -1,5 +1,6 @@
 #Imports
 import FUDGEPrinter
+from FUDGEPrinter import *
 import FUDGEDice
 from FUDGEDice import *
 import FUDGECalculate
@@ -19,7 +20,7 @@ dice = FDice()
 printer.FSkipLine()
 
 #Welcome
-printer.FPrintItem(FTitle)  #Welcome Title
+printer.FPrintItem(FUDGEPrinter.FTitle)  #Welcome Title
 printer.FSkipLine()
 printer.FPrintList(FSkills) #Display Skill List
 
@@ -34,7 +35,7 @@ while loop == 1:
 		loop = 0
 	else:                                            #If not between 0 and 10, try again
 		printer.FSkipLine()
-		printer.PrintItem(FError['SkillChoice'])
+		printer.PrintItem(FError['skillchoice'])
 		printer.FSkipLine()
 		loop = 1
 		
@@ -46,12 +47,12 @@ dice_roll = int(dice.Roll())
 
 #Display skill level and dice roll
 printer.FSkipLine()
-printer.FPrintResult(FIdentifier['Skill Level'], skill_level) #Print skill level
-printer.FPrintResult(FIdentifier['Roll'], dice_roll)          #Print dice roll
+printer.FPrintResult(FResultIdentifiers['skilllevel'], skill_level) #Print skill level
+printer.FPrintResult(FResultIdentifiers['roll'], dice_roll)          #Print dice roll
 
 #Process total roll (Dice roll + skill level)
 total_roll = FUDGECalculate.DetermineTotalRoll(dice_roll, skill_level)
 
 printer.FSkipLine()
-printer.FPrintResult(FIdentifier['Roll + Skill Level'], total_roll) #Display total roll (Dice roll + skill level)
+printer.FPrintResult(FResultIdentifiers['totalroll'], total_roll) #Display total roll (Dice roll + skill level)
 printer.FSkipLine()
