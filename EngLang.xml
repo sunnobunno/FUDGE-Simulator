@@ -26,14 +26,19 @@
 		<pathetic>Pathetic</pathetic>
 		<pathetic>Pathetic</pathetic>
 	</fpossibleskills>
+    <flanguages>
+        <english>English</english>
+        <french>French</french>
+    </flanguages>
 	<ftitle>
         <fmaintitle>------- FUDGE Action Resolution Simulator -------</fmaintitle>
     </ftitle>
 	<fprompt>
         <skillprompt>Enter corresponding skill number</skillprompt>
+        <languageprompt>Choose language</languageprompt>
     </fprompt>
 	<ferror>
-		<skillchoice>Please input a valid selection</skillchoice>
+		<choiceerror>Please input a valid selection</choiceerror>
 	</ferror>
 	<fresultidentifiers>
 		<skilllevel>Skill Level</skilllevel>

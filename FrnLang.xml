@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<langfile lang="French">
+	<flistingskills>
+		<legendary>Légendaire (+4)</legendary>
+		<superb>Suberbe    (+3)</superb>
+		<great>Super      (+2)</great>
+		<fair>Passable   (+1)</fair>
+		<average>Moyen      (+0)</average>
+		<poor>Piètre     (-1)</poor>
+		<mediocre>Médiocre   (-2)</mediocre>
+		<terrible>Terrible   (-3)</terrible>
+		<pathetic>Pathétique (-4)</pathetic>
+	</flistingskills>
+	<fpossibleskills>
+		<legendary>Légendaire</legendary>
+		<legendary>Légendaire</legendary>
+		<legendary>Légendaire</legendary>
+		<superb>Suberbe</superb>
+		<great>Super</great>
+		<fair>Passable</fair>
+		<average>Moyen</average>
+		<poor>Piètre</poor>
+		<mediocre>Médiocre</mediocre>
+		<terrible>Terrible</terrible>
+		<pathetic>Pathétique</pathetic>
+		<pathetic>Pathétique</pathetic>
+		<pathetic>Pathétique</pathetic>
+	</fpossibleskills>
+    <languages>
+        <english>Anglais</english>
+        <french>Français</french>
+    </languages>
+	<ftitle>
+        <fmaintitle>------- FUDGE Simulateur d'action -------</fmaintitle>
+    </ftitle>
+	<fprompt>
+        <skillprompt>Entrez le numéro de compétence correspondant</skillprompt>
+    </fprompt>
+	<ferror>
+		<skillchoice>S'il vous plaît entrer une sélection valide</skillchoice>
+	</ferror>
+	<fresultidentifiers>
+		<skilllevel>Niveau de compétence</skilllevel>
+		<roll>Jet de dé</roll>
+		<totalroll>Jet de Dé + Niveau de Compétence</totalroll>
+	</fresultidentifiers>
+</langfile>
