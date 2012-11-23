@@ -21,7 +21,7 @@ FResultIdentifiers = {} #Identifiers for FPtintResult()
 FLanguages = []         #Language names
 
 #Class that controlls all of the printing, given a language
-class FPrinter:
+class DefPrinter:
 	
 	#Determines which language to write in
 	def __init__(self, lang):

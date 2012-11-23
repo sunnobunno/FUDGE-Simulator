@@ -1,8 +1,7 @@
 #Imports
 import FUDGEPrinter
-from FUDGEPrinter import *
+import DefaultFPrinter
 import FUDGEDice
-from FUDGEDice import *
 import FUDGECalculate
 
 #Used variables
@@ -14,56 +13,55 @@ total_roll = 0      # (int) Value between -7 and +7 that is skill_level + dice_r
 lang_choice = 0      # (int) Value between 1 and 2 that determines language choice
 
 #Objects
-defprinter = FPrinter('engl')
-dice = FDice()
+defprinter = DefaultFPrinter.DefPrinter('engl')
+dice = FUDGEDice.FDice()
 
 #Skip starting line
 defprinter.FSkipLine()
 
 #Welcome
-defprinter.FPrintItem(FTitle['fmaintitle'])  #Welcome Title
-
-#Ask language
-defprinter.FSkipLine()
-defprinter.FPrintList(Flanguages)
+defprinter.FPrintItem(DefaultFPrinter.FTitle['fmaintitle'])  #Welcome Title
 
 #Language asking loop
 loop = 1
 while loop == 1:
 	defprinter.FSkipLine()
-	defprinter.FPrintItem(FPrompt['languageprompt'])
+	defprinter.FPrintList(DefaultFPrinter.FLanguages)
+	defprinter.FSkipLine()
+	defprinter.FPrintItem(DefaultFPrinter.FPrompt['languageprompt'])
 	lang_choice = int(raw_input('> '))
 	
 	#Check for valid choice
-	if langchoice > 0 and langchoice < 3:
+	if lang_choice > 0 and lang_choice < 3:
 		loop = 0
 	else:
 		defprinter.FSkipLine()
-		defprinter.FPrintItem(Ferror['choiceerror'])
+		defprinter.FPrintItem(DefaultFPrinter.FError['choiceerror'])
 		loop = 1
 
-if langchoice == 'eng':
+if lang_choice == 1:  #Englsih (1)
 	printer = FUDGEPrinter.FPrinter('eng')
-elif langchoice == 'frn':
+elif lang_choice == 2:  #French (2)
 	printer = FUDGEPrinter.FPrinter('frn')
 else:
 	pass
 
-printer.FSkipLine()
-printer.FPrintList(FSkills) #Display Skill List
+del defprinter
 
 #Skill level asking loop
-printer.FSkipLine()
 loop = 1
 while loop == 1:
-	printer.FPrintItem(FPrompt['skillprompt'])
+	printer.FSkipLine()
+	printer.FPrintList(FUDGEPrinter.FSkills) #Display Skill List
+	printer.FSkipLine()
+	printer.FPrintItem(FUDGEPrinter.FPrompt['skillprompt'])
 	raw_skill_level = int(raw_input('> '))           #Ask for input on skill level
 	#Checking for valid choice
 	if raw_skill_level > 0 and raw_skill_level < 10: #If between 0 and 10, continue
 		loop = 0
 	else:                                            #If not between 0 and 10, try again
 		printer.FSkipLine()
-		printer.FPrintItem(FError['choiceerror'])
+		printer.FPrintItem(FUDGEPrinter.FError['choiceerror'])
 		loop = 1
 		
 #Process skill level into true skill level
@@ -74,12 +72,12 @@ dice_roll = int(dice.Roll())
 
 #Display skill level and dice roll
 printer.FSkipLine()
-printer.FPrintResult(FResultIdentifiers['skilllevel'], skill_level) #Print skill level
-printer.FPrintResult(FResultIdentifiers['roll'], dice_roll)          #Print dice roll
+printer.FPrintResult(FUDGEPrinter.FResultIdentifiers['skilllevel'], skill_level) #Print skill level
+printer.FPrintResult(FUDGEPrinter.FResultIdentifiers['roll'], dice_roll)          #Print dice roll
 
 #Process total roll (Dice roll + skill level)
 total_roll = FUDGECalculate.DetermineTotalRoll(dice_roll, skill_level)
 
 printer.FSkipLine()
-printer.FPrintResult(FResultIdentifiers['totalroll'], total_roll) #Display total roll (Dice roll + skill level)
+printer.FPrintResult(FUDGEPrinter.FResultIdentifiers['totalroll'], total_roll) #Display total roll (Dice roll + skill level)
 printer.FSkipLine()
