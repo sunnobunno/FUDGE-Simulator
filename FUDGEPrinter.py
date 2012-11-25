@@ -27,17 +27,17 @@ class FPrinter:
 	def __init__(self, lang):
 		self.lang = lang
 		
-		self.tree = ET.parse('EngLang.xml')
+		self.tree = ET.parse('lang/EngLang.xml')
 		self.root = self.tree.getroot()
 		
 		#Check language
 		#English
 		if self.lang == 'eng':
-			self.tree = ET.parse('EngLang.xml')
+			self.tree = ET.parse('lang/EngLang.xml')
 			self.root = self.tree.getroot()
 		#French
 		elif self.lang == 'frn':
-			self.tree = ET.parse('FrnLang.xml')
+			self.tree = ET.parse('lang/FrnLang.xml')
 			self.root = self.tree.getroot()
 		#--Filler--
 		else:
