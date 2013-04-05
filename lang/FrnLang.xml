@@ -41,7 +41,7 @@
 	</ferror>
 	<fresultidentifiers>
 		<skilllevel>Niveau de compétence</skilllevel>
-		<roll>Jet de dé</roll>
+		<roll>Jet de Dé</roll>
 		<totalroll>Jet de Dé + Niveau de Compétence</totalroll>
 	</fresultidentifiers>
 </langfile>

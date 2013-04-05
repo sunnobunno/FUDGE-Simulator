@@ -81,3 +81,5 @@ total_roll = FUDGECalculate.DetermineTotalRoll(dice_roll, skill_level)
 printer.FSkipLine()
 printer.FPrintResult(FUDGEPrinter.FResultIdentifiers['totalroll'], total_roll) #Display total roll (Dice roll + skill level)
 printer.FSkipLine()
+
+done = raw_input("...")
